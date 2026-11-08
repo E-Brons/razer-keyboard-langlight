@@ -1,5 +1,5 @@
 watch.log
 .build/
 _CodeSignature/
-langlight
+/langlight
 *.o
