@@ -1,4 +1,5 @@
 import Foundation
+import ServiceManagement
 import RazerBLE
 
 func log(_ s: String) {
@@ -23,6 +24,11 @@ case "install":
     do { try LaunchAgent.install(extraArgs: Array(args.dropFirst())); exit(0) } catch { fail("\(error)") }
 case "uninstall":
     LaunchAgent.uninstall(); exit(0)
+case "login-item":   // run from inside Langlight.app: register/unregister as a Login Item
+    do {
+        if args.dropFirst().first == "off" { try SMAppService.mainApp.unregister() } else { try SMAppService.mainApp.register() }
+        print("login item status: \(SMAppService.mainApp.status)"); exit(0)
+    } catch { fail("\(error)") }
 default: break
 }
 
@@ -36,7 +42,7 @@ func parseBytes(_ a: ArraySlice<String>) -> [UInt8]? {
 
 Task { @MainActor in
     let device = RazerDevice(transport: transport)
-    if args.first == "watch" {
+    if args.first == "watch" || args.isEmpty {   // no args: launched as a login item
         var palette = Palette()
         var i = 1
         while i + 1 < args.count {
