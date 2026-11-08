@@ -4,12 +4,12 @@ Colors a Razer PT Ergo (Bluetooth LE) keyboard by the active macOS input languag
 
 | Case | Color |
 |---|---|
-| Hebrew | Yellow `FFFF00` |
-| English | Magenta `FF00FF` |
+| Hebrew | Green `00FF00` |
+| English | Magenta `FF0080` |
 | English + Caps Lock | Blue `0000FF` |
 | Other / unknown / failure | Red `FF0000` |
 
-Hebrew with Caps Lock stays yellow. Red is also used when the input-source query fails; if Bluetooth is down it is applied when the link returns.
+Hebrew with Caps Lock stays green. Red is also used when the input-source query fails; if Bluetooth is down it is applied when the link returns.
 
 ## Requirements
 - macOS 13+, Xcode command-line tools (Swift 5.9+).

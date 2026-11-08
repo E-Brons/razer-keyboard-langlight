@@ -5,8 +5,8 @@ final class PolicyTests: XCTestCase {
     let p = Palette()
 
     func testDefaultColors() {
-        XCTAssertEqual(p.hebrew.description, "FFFF00")
-        XCTAssertEqual(p.english.description, "FF00FF")
+        XCTAssertEqual(p.hebrew.description, "00FF00")
+        XCTAssertEqual(p.english.description, "FF0080")
         XCTAssertEqual(p.englishCaps.description, "0000FF")
         XCTAssertEqual(p.other.description, "FF0000")
     }
