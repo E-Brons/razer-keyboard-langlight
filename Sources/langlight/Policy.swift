@@ -30,7 +30,7 @@ public struct Palette: Equatable {
 /// Pure color rule. `kind == nil` means the input-source query failed.
 public func color(kind: InputKind?, capsLock: Bool, palette: Palette = Palette()) -> RGB {
     switch kind {
-    case .hebrew?: return palette.hebrew
+    case .hebrew?: return capsLock ? palette.englishCaps : palette.hebrew   // Caps Lock types English capitals even on a Hebrew layout
     case .english?: return capsLock ? palette.englishCaps : palette.english
     case .other?, nil: return palette.other
     }

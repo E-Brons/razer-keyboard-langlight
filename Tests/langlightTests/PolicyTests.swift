@@ -13,7 +13,7 @@ final class PolicyTests: XCTestCase {
 
     func testEveryCombination() {
         XCTAssertEqual(color(kind: .hebrew, capsLock: false), p.hebrew)
-        XCTAssertEqual(color(kind: .hebrew, capsLock: true), p.hebrew)   // caps only matters for English
+        XCTAssertEqual(color(kind: .hebrew, capsLock: true), p.englishCaps)   // Caps Lock types English capitals on a Hebrew layout
         XCTAssertEqual(color(kind: .english, capsLock: false), p.english)
         XCTAssertEqual(color(kind: .english, capsLock: true), p.englishCaps)
         XCTAssertEqual(color(kind: .other, capsLock: false), p.other)
