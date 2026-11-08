@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Reference copy. `langlight install` generates the real one with the correct binary path. -->
+    <key>Label</key><string>local.langlight</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/YOU/.local/bin/langlight</string>
+        <string>watch</string>
+    </array>
+    <key>RunAtLoad</key><true/>
+    <key>KeepAlive</key><true/>
+    <key>ProcessType</key><string>Interactive</string>
+    <key>StandardErrorPath</key><string>/Users/YOU/Library/Logs/langlight.log</string>
+    <key>StandardOutPath</key><string>/Users/YOU/Library/Logs/langlight.log</string>
+</dict>
+</plist>
