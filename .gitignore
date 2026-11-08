@@ -1,0 +1,5 @@
+watch.log
+.build/
+_CodeSignature/
+langlight
+*.o
