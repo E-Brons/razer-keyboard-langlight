@@ -2,6 +2,11 @@ import Foundation
 import ServiceManagement
 import RazerBLE
 
+// Launched as an app (no terminal): send stderr to the log file.
+if isatty(2) == 0 {
+    freopen(NSHomeDirectory() + "/Library/Logs/langlight.log", "a", stderr)
+}
+
 func log(_ s: String) {
     FileHandle.standardError.write("[\(ISO8601DateFormatter().string(from: Date()))] \(s)\n".data(using: .utf8)!)
 }
@@ -33,7 +38,7 @@ default: break
 }
 
 let transport = CoreBluetoothTransport()
-if ProcessInfo.processInfo.environment["LL_DEBUG"] != nil { transport.log = log }
+if ProcessInfo.processInfo.environment["LL_DEBUG"] != nil || args.isEmpty { transport.log = log }
 
 func parseBytes(_ a: ArraySlice<String>) -> [UInt8]? {
     let b = a.compactMap { UInt8($0, radix: 16) }
